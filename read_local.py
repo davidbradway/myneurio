@@ -23,7 +23,7 @@ p_W = list()
 def detect():
     # while loop every second
     try:
-        for i in range(120):
+        for i in range(12):
             print(i, end=' ')
             sys.stdout.flush()
             sample = nc.get_local_current_sample(user_info['locations'][0]['sensors'][0]['ipAddress'])
@@ -33,8 +33,8 @@ def detect():
     except KeyboardInterrupt:
         return
     print('')
-    print(json.dumps({'timestamp': timestamp, 'p_W': p_W}, sort_keys=True, indent=4))
-    data = json.dumps({'timestamp': timestamp, 'p_W': p_W})
+    data = {'timestamp': timestamp, 'p_W': p_W}
+    print(json.dumps(data, indent=4))
     with open('data.json', 'w') as f:
         json.dump(data, f, ensure_ascii=False)
 #pause()
