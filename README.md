@@ -28,3 +28,8 @@ http://api-docs.neur.io
 `python example.py`  
 `python read_local.py`
 
+## Flask
+
+`export FLASK_APP=hello.py`  
+`flask run --host=0.0.0.0`  
+`http://192.168.1.6:5000/`
