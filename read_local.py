@@ -23,7 +23,7 @@ p_W = list()
 def detect():
     # while loop every second
     try:
-        for i in range(12):
+        for i in range(120):
             print(i, end=' ')
             sys.stdout.flush()
             sample = nc.get_local_current_sample(user_info['locations'][0]['sensors'][0]['ipAddress'])
@@ -35,7 +35,11 @@ def detect():
     print('')
     data = {'timestamp': timestamp, 'p_W': p_W}
     print(json.dumps(data, indent=4))
-    with open('data.json', 'w') as f:
-        json.dump(data, f, ensure_ascii=False)
+    #with open('data.json', 'w') as f:
+    #    json.dump(data, f, ensure_ascii=False)
+    return json.dumps(data)
+
 #pause()
-detect()
+
+if __name__ == '__main__':
+    detect()

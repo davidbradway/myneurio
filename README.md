@@ -30,6 +30,6 @@ http://api-docs.neur.io
 
 ## Flask
 
-`export FLASK_APP=hello.py`  
+`export FLASK_APP=app.py`  
 `flask run --host=0.0.0.0`  
-`http://192.168.1.6:5000/`
+`http://192.168.1.6:5000/label`
