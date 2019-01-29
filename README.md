@@ -9,7 +9,8 @@ http://api-docs.neur.io
 ### With Conda
 
 `conda env create -f environment.yml`  
-`conda activate myneurio`
+`(source) activate myneurio`
+`(source) deactivate`
 
 ### With venv and pip
 
