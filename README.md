@@ -9,15 +9,14 @@ http://api-docs.neur.io
 ### With Conda
 
 `conda env create -f environment.yml`  
-`(source) activate myneurio`
-`(source) deactivate`
+`(source) activate myneurio`  
+`(source) deactivate`  
 
 ### With venv and pip
 
 `python3 -m venv .venv`  
 `source .venv/bin/activate`  
 `pip install -r requirements.txt`  
-`...`  
 `deactivate`
 
 ## Manually edit your `my_keys.py` file to add your keys and credentials and do not add those secrets to the repo!
