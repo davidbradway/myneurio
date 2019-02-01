@@ -1,11 +1,12 @@
 from __future__ import print_function
 #from gpiozero import Button
 #from signal import pause
+import sys
+sys.path.append('..')
 import my_keys
 import neurio
 import time
 import json
-import sys
 
 #button = Button(18)
 #button.when_pressed = detect

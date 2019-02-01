@@ -1,5 +1,7 @@
 from __future__ import print_function
 import neurio
+import sys
+sys.path.append('..')
 import my_keys
 
 # Setup authentication:
