@@ -12,7 +12,7 @@ user_info = nc.get_user_information()
 print("Sensor ID %s, location ID %s" %(user_info["locations"][0]["sensors"][0]["sensorId"],
   user_info["locations"][0]["id"]))
 
-# Fetch sample:
+# Fetch sample from the remote API (not the local device.):
 sample = nc.get_samples_live_last(sensor_id=user_info["locations"][0]["sensors"][0]["sensorId"])
 
 print("Current power consumption: %d W" % (sample['consumptionPower']))
