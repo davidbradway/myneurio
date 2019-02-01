@@ -27,7 +27,7 @@ if __name__ == "__main__":
             try:
                 sample = nc.get_local_current_sample(user_info['locations'][0]['sensors'][0]['ipAddress'])
                 i = sample['channels'][2]['p_W']
-                print(i)
+                print(i, end=' ', flush=True)
                 json_body = [
                     {
                         "measurement": "neurioData",
@@ -44,7 +44,7 @@ if __name__ == "__main__":
                 #result = client.query('select value from sensorData;')
                 #print("Result: {0}".format(result))
             except Exception:
-                print("killed")
+                print(Exception)
             time.sleep(1)
     except (KeyboardInterrupt, SystemExit):
         print("\n\nExiting")
