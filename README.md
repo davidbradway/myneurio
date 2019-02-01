@@ -25,11 +25,12 @@ http://api-docs.neur.io
 
 ## Usage
 
-`python example.py`  
-`python read_local.py`
+`cd example_neurio_scripts && python example_remote_api.py`  
+`cd collectLabeledData && python read_local.py`  
 
 ## Flask
 
+`cd collect_local_data`  
 `export FLASK_APP=app.py`  
 `flask run --host=0.0.0.0`  
-`http://192.168.1.6:5000/label`
+`http://192.168.1.[PIIP]:5000/[LABEL]`
