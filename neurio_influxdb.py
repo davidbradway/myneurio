@@ -4,9 +4,6 @@ from watchdog import Watchdog
 import my_keys
 import neurio
 import time
-import json
-import sys
-
 
 if __name__ == "__main__":
     try:
