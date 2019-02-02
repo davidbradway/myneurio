@@ -10,6 +10,7 @@
 
 Get a keys to the Neurio API and fill out `my_keys.py` in the parent directory of this one.
 Fix the constants inside the for loop of `read_local.py` for your setup.
+Use environment (Conda or VirtualEnv) described in parent directory as well.
 
 `./run_flask.sh`
 
