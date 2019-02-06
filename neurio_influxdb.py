@@ -17,10 +17,10 @@ if __name__ == "__main__":
         client = InfluxDBClient('localhost', 8086, 'admin', 'admin', 'hackaday')
         client.create_database('hackaday')
 
-        watchdog = Watchdog(5)
+        #watchdog = Watchdog(5)
         print("Loop started")
         while(True):
-            watchdog.reset()
+            #watchdog.reset()
             try:
                 sample = nc.get_local_current_sample(user_info['locations'][0]['sensors'][0]['ipAddress'])
                 i = sample['channels'][2]['p_W']
