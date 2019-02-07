@@ -1,6 +1,5 @@
 from __future__ import print_function
 from influxdb import InfluxDBClient
-from watchdog import Watchdog
 import my_keys
 import neurio
 import time
