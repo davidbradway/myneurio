@@ -1,6 +1,7 @@
 from flask import Flask
 import datetime
 import read_local
+import read_remote
 app = Flask(__name__)
 
 data_dir = "data"
