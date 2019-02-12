@@ -24,8 +24,8 @@ def detect():
         my_list = nc.get_samples_live(user_info['locations'][0]['sensors'][0]['sensorId'])
     except:
         pass
-    timestamp = [i['timestamp'] for i in my_list]
-    p_W = [i['consumptionPower'] for i in my_list]
+    timestamp = [i['timestamp'] for i in my_list.reverse()]
+    p_W = [i['consumptionPower'] for i in my_list.reverse()]
     data = {'timestamp': timestamp, 'p_W': p_W}
     return json.dumps(data)
 
