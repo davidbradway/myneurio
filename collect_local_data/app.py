@@ -9,7 +9,7 @@ data_dir = "data"
 
 @app.route('/')
 def root():
-return "enter label in URL, e.g.:<br><a href='http://192.168.1.6:5000/dryer'>192.168.1.6:5000/dryer</a><br><a href='http://192.168.1.6:5000/r/dryer'>192.168.1.6:5000/r/dryer</a>"
+    return "enter label in URL, e.g.:<br><a href='http://192.168.1.6:5000/dryer'>192.168.1.6:5000/dryer</a><br><a href='http://192.168.1.6:5000/r/dryer'>192.168.1.6:5000/r/dryer</a>"
 
 @app.route('/r/<label>')
 def retro(label):
