@@ -35,7 +35,6 @@ def detect():
         return
     print('')
     data = {'timestamp': timestamp, 'p_W': p_W}
-    print(json.dumps(data))
     #with open('data.json', 'w') as f:
     #    json.dump(data, f, ensure_ascii=False)
     return json.dumps(data)
@@ -43,4 +42,4 @@ def detect():
 #pause()
 
 if __name__ == '__main__':
-    detect()
+    print(detect())

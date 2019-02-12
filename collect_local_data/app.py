@@ -10,6 +10,12 @@ data_dir = "data"
 def root():
     return "enter label in URL, e.g.: <a href='http://192.168.1.6:5000/dryer'>192.168.1.6:5000/dryer</a>"
 
+@app.route('/r/<label>')
+def retro(label):
+    datastring = read_remote.detect()
+    with open('%s/%s_%s.json' % (data_dir, label, datetime.datetime.now()), 'w') as f:
+        f.write(datastring)
+    return 'wrote %s \n %s' % (label, datastring)
 
 @app.route('/<label>')
 def write_file(label):
