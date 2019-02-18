@@ -14,3 +14,15 @@ Use environment (Conda or VirtualEnv) described in parent directory as well.
 
 `./run_flask.sh`
 
+## Quick start
+$export FLASK_APP=app.py
+
+$flask run 
+
+## Docker deployment
+$docker build -t myn .
+
+$docker run -d --name myncon -p 8081:5000 -v ./data:/data -e FLASK_APP=app.py myn
+
+`docker-compose up -d`
+

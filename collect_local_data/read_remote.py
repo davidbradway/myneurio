@@ -14,7 +14,7 @@ nc = neurio.Client(token_provider=tp)
 user_info = nc.get_user_information()
 
 def detect():
-    # while loop every second
+    # loop every second
     for i in range(60):
         print(i, end=' ')
         sys.stdout.flush()
