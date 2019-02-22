@@ -6,23 +6,23 @@
 - the goal is to better detect events of interest such as when laundry starts, etc.
 - note that there are a lot of hardcoded variables in here.
 
-## usage
-
-Get a keys to the Neurio API and fill out `my_keys.py` in the parent directory of this one.
-Fix the constants inside the for loop of `read_local.py` for your setup.
-Use environment (Conda or VirtualEnv) described in parent directory as well.
-
-`./run_flask.sh`
-
 ## Quick start
-$export FLASK_APP=app.py
 
-$flask run 
+Get devloper keys to the Neurio API and fill out `my_keys.py`.
+Fix the constants inside the for loop of `read_local.py` for your setup.
+Use an environment (Conda, VirtualEnv, or Docker) described in parent directory as well.
+
+`export FLASK_APP=app.py`
+
+`flask run --host=0.0.0.0`
 
 ## Docker deployment
-$docker build -t myn .
 
-$docker run -d --name myncon -p 8081:5000 -v ./data:/data -e FLASK_APP=app.py myn
+### without docker-compose
+
+`docker build -t myn .`  
+`docker run -d --name myncon -p 5000:5000 -v ./data:/app/data -e FLASK_APP=app.py myn`
+
+## with docker-compose
 
 `docker-compose up -d`
-
