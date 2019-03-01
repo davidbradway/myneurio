@@ -2,6 +2,7 @@ version: '2'
 services:
   web:
     build: .
+    restart: always
     container_name: flask
     environment:
       - FLASK_APP=app.py
