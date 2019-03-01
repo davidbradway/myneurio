@@ -1,5 +1,6 @@
 from __future__ import print_function
 import sys
+sys.path.append('..')
 import my_keys
 import neurio
 import time
