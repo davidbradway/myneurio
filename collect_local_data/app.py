@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for, render_template
 import datetime
 import read_local
 import read_remote
@@ -6,10 +6,9 @@ app = Flask(__name__)
 
 data_dir = "data"
 
-
 @app.route('/')
-def root():
-    return "enter label in URL, e.g.:<br><a href='http://192.168.1.6:5000/dryer'>192.168.1.6:5000/dryer</a><br><a href='http://192.168.1.6:5000/r/dryer'>192.168.1.6:5000/r/dryer</a>"
+def index():
+        return render_template('index.html')
 
 @app.route('/r/<label>')
 def retro(label):
