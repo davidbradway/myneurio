@@ -1,10 +1,13 @@
 from flask import Flask, url_for, render_template
+from flask_bootstrap import Bootstrap
 import datetime
 import read_local
 import read_remote
-app = Flask(__name__)
 
 data_dir = "data"
+
+app = Flask(__name__)
+bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
@@ -25,3 +28,4 @@ def write_file(label):
     with open('%s/%s_%s.json' % (data_dir, label, datetime.datetime.now()), 'w') as f:
         f.write(datastring)
     return 'wrote %s \n %s' % (label, datastring)
+
