@@ -32,13 +32,14 @@
   "annotations": {
     "list": []
   },
+  "editMode": false,
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": false,
   "id": null,
   "links": [],
-  "refresh": false,
+  "refresh": "5s",
   "rows": [
     {
       "collapse": false,
@@ -48,6 +49,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_INFLUXDB}",
+          "description": "Power in Watts from the Neurio sensor",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -130,16 +132,16 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": null,
+              "format": "watt",
+              "label": "Power",
               "logBase": 1,
               "max": null,
               "min": null,
               "show": true
             },
             {
-              "format": "short",
-              "label": null,
+              "format": "dtdurations",
+              "label": "",
               "logBase": 1,
               "max": null,
               "min": null,
@@ -163,7 +165,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -193,5 +195,5 @@
   },
   "timezone": "browser",
   "title": "NeurioDash",
-  "version": 2
+  "version": 4
 }
