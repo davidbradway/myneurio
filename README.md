@@ -45,17 +45,21 @@ pip install -r requirements.txt
 
 ## You may have to adjust hard-coded parameters in these scripts
 
-`python example_remote_api.py`  
-`python read_local.py`  
-`python read_remote.py`  
+```bash
+python example_remote_api.py
+python read_local.py
+python read_remote.py
+```
 
 ## Flask
 
-`export FLASK_APP=app.py`  
-`flask run --host=0.0.0.0`  
-`http://raspberrypi:5000/`  
-`http://raspberrypi:5000/[LABEL]`  
-`http://raspberrypi:5000/r/[LABEL]`  
+```bash
+export FLASK_APP=app.py
+flask run --host=0.0.0.0
+```
+- http://raspberrypi:5000/
+- http://raspberrypi:5000/[LABEL]
+- http://raspberrypi:5000/r/[LABEL]
 
 # More detail on Grafana and InfluxDB Dashboard with Raspberry pi
 
