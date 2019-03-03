@@ -11,8 +11,7 @@ http://api-docs.neur.io
 
 ## Get developer keys and deal with Environment Variables
 
-`# sign up for delevoper API keys for Neurio and put them in   
-`config.env`  
+sign up for delevoper API keys for Neurio and put them in `config.env`  
 `git update-index --assume-unchanged config.env`  
 `set -a && source config.env && set +a`  
 
@@ -27,11 +26,11 @@ put in the username `admin` and password `admin` (and change it!)
 
 Import a new dashboard
 
-1. pick the JSON file in grafana/ dir in the repository.
-2. choose influxdb as the datasource to use  
-3. Try different time windows for the graph
+1. pick the `.json` file in `grafana/` dir in the repo
+2. choose Influxdb as the datasource to use  
+3. Try different time windows for the graph, etc
 
-### Try things locally With venv and pip
+### Try things locally With `venv` and `pip`
 
 `cd collect_local_data`  
 `python3 -m venv .venv`  
@@ -49,9 +48,9 @@ Import a new dashboard
 
 `export FLASK_APP=app.py`  
 `flask run --host=0.0.0.0`  
-`http://raspberrypi:5000/`
-`http://raspberrypi:5000/[LABEL]`
-`http://raspberrypi:5000/r/[LABEL]`
+`http://raspberrypi:5000/`  
+`http://raspberrypi:5000/[LABEL]`  
+`http://raspberrypi:5000/r/[LABEL]`  
 
 # More detail on Grafana and InfluxDB Dashboard with Raspberry pi
 
