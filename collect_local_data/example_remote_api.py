@@ -1,11 +1,8 @@
 from __future__ import print_function
 import neurio
-import sys
-sys.path.append('..')
-import my_keys
 
 # Setup authentication:
-tp = neurio.TokenProvider(key=my_keys.key, secret=my_keys.secret)
+tp = neurio.TokenProvider(key=os.environ.get('NEURIO_KEY'), secret=os.environ.get('NEURIO_SECRET'))
 # Create client that can authenticate itself:
 nc = neurio.Client(token_provider=tp)
 # Get user information (including sensor ID and location ID)

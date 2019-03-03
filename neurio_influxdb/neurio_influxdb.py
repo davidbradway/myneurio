@@ -1,9 +1,9 @@
 from __future__ import print_function
 from influxdb import InfluxDBClient
 import threading_timer_decorator_exit
-import my_keys
 import neurio
 import time
+import os
 
 @threading_timer_decorator_exit.exit_after(5)
 def slow_calls():
@@ -30,7 +30,7 @@ def slow_calls():
 if __name__ == "__main__":
     try:
         # Setup authentication:
-        tp = neurio.TokenProvider(key=my_keys.key, secret=my_keys.secret)
+        tp = neurio.TokenProvider(key=os.environ.get('NEURIO_KEY'), secret=os.environ.get('NEURIO_SECRET'))
         # Create client that can authenticate itself:
         nc = neurio.Client(token_provider=tp)
         # Get user information (including sensor ID and location ID)
