@@ -8,49 +8,52 @@ http://api-docs.neur.io
 
 `git clone git@github.com:davidbradway/myneurio.git`  
 `cd myneurio`  
+
+## Get developer keys and deal with Environment Variables
+
 `# sign up for delevoper API keys for Neurio and put them in   
 `config.env`  
 `git update-index --assume-unchanged config.env`  
+`set -a && source config.env && set +a`  
+
+## Start docker containers and set up Grafana
+
 `docker-compose up -d`  
 `grafana/add_datasource.sh`  
 
-navigate to grafana http://PIIP:3000
+navigate to grafana at http://raspberrypi:3000
 
-put in the password 
+put in the username `admin` and password `admin` (and change it!)
 
-import a new dashboard pick the JSON file in grafana dir in the repository
+Import a new dashboard
 
-choose influxdb as the datasource to use  
+1. pick the JSON file in grafana/ dir in the repository.
+2. choose influxdb as the datasource to use  
+3. Try different time windows for the graph
 
-### With Conda
+### Try things locally With venv and pip
 
-`conda env create -f environment.yml`  
-`(source) activate myneurio`  
-`(source) deactivate`  
-
-### With venv and pip
-
+`cd collect_local_data`  
 `python3 -m venv .venv`  
 `source .venv/bin/activate`  
 `pip install -r requirements.txt`  
-`deactivate`
+`#deactivate`
 
-## Manually edit your `my_keys.py` file to add your keys and credentials and do not add those secrets to the repo!
+## You may have to adjust hard-coded parameters in these scripts
 
-`git update-index --assume-unchanged my_keys.py`
-
-## Usage
-
-`cd example_neurio_scripts && python example_remote_api.py`  
-`cd collectLabeledData && python read_local.py`  
+`python example_remote_api.py`  
+`python read_local.py`  
+`python read_remote.py`  
 
 ## Flask
 
-`cd collect_local_data`  
 `export FLASK_APP=app.py`  
 `flask run --host=0.0.0.0`  
-`http://192.168.1.[PIIP]:5000/[LABEL]`
-# Grafana and InfluxDB Dashboard with Raspberry pi
+`http://raspberrypi:5000/`
+`http://raspberrypi:5000/[LABEL]`
+`http://raspberrypi:5000/r/[LABEL]`
+
+# More detail on Grafana and InfluxDB Dashboard with Raspberry pi
 
 This repository contains docker and python files for a dashboard implementation using gGrafana and InfluxDB. If you are looking for the x86 version of the same project, please take a look at [https://github.com/inderpreet/py_docker_grafana_influxdb_dashboard](https://github.com/inderpreet/py_docker_grafana_influxdb_dashboard).
 
