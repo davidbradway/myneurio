@@ -6,13 +6,17 @@ http://api-docs.neur.io
 
 ## Setup
 
+I'm assuming you have a newish Raspberry Pi (I tested on a 3). Also assuming you have Raspbian, python, virtualenv, pip, docker, and docker-compose installed. If not, see bottom section of this README for some of the install instructions.
+
 `git clone git@github.com:davidbradway/myneurio.git`  
 `cd myneurio`  
 
 ## Get developer keys and deal with Environment Variables
 
-sign up for delevoper API keys for Neurio and put them in `config.env`  
+Sign up for delevoper API keys for Neurio and put them in `config.env`  
+Keep your secrets/keys out of your repo: 
 `git update-index --assume-unchanged config.env`  
+Add your environment variables from the file: 
 `set -a && source config.env && set +a`  
 
 ## Start docker containers and set up Grafana
@@ -24,19 +28,20 @@ navigate to grafana at http://raspberrypi:3000
 
 put in the username `admin` and password `admin` (and change it!)
 
-Import a new dashboard
-
+Import a new dashboard:
 1. pick the `.json` file in `grafana/` dir in the repo
-2. choose Influxdb as the datasource to use  
+2. choose `Influxdb` as the datasource to use  
 3. Try different time windows for the graph, etc
 
 ### Try things locally With `venv` and `pip`
 
-`cd collect_local_data`  
-`python3 -m venv .venv`  
-`source .venv/bin/activate`  
-`pip install -r requirements.txt`  
-`#deactivate`
+```bash
+cd collect_local_data
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+#deactivate
+```
 
 ## You may have to adjust hard-coded parameters in these scripts
 
