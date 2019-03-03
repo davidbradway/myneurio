@@ -6,6 +6,22 @@ http://api-docs.neur.io
 
 ## Setup
 
+`git clone git@github.com:davidbradway/myneurio.git`  
+`cd myneurio`  
+`# sign up for delevoper API keys for Neurio and put them in   
+`config.env`  
+`git update-index --assume-unchanged config.env`  
+`docker-compose up -d`  
+`grafana/add_datasource.sh`  
+
+navigate to grafana http://PIIP:3000
+
+put in the password 
+
+import a new dashboard pick the JSON file in grafana dir in the repository
+
+choose influxdb as the datasource to use  
+
 ### With Conda
 
 `conda env create -f environment.yml`  
