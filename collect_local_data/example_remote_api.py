@@ -1,5 +1,6 @@
 from __future__ import print_function
 import neurio
+import os
 
 # Setup authentication:
 tp = neurio.TokenProvider(key=os.environ.get('NEURIO_KEY'), secret=os.environ.get('NEURIO_SECRET'))
