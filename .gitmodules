@@ -1,3 +1,0 @@
-[submodule "rpi_grafana_influxdb_python"]
-	path = rpi_grafana_influxdb_python
-	url = git@github.com:davidbradway/rpi_grafana_influxdb_python.git
