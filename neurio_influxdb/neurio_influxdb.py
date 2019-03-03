@@ -36,7 +36,8 @@ if __name__ == "__main__":
         # Get user information (including sensor ID and location ID)
         user_info = nc.get_user_information()
 
-        client = InfluxDBClient('localhost', 8086, 'admin', 'admin', 'hackaday')
+        #client = InfluxDBClient('localhost', 8086, 'admin', 'admin', 'hackaday')
+        client = InfluxDBClient('influxdb', 8086, 'admin', 'admin', 'hackaday')
         client.create_database('hackaday')
 
         print("Loop started")
