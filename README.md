@@ -13,7 +13,7 @@ I'm assuming you have a newish Raspberry Pi (I tested on a 3). Also assuming you
 
 ## Get developer keys and deal with Environment Variables
 
-Sign up for delevoper API keys for Neurio and put them in `config.env`  
+Sign up for developer API keys for Neurio and put them in `config.env`  
 Keep your secrets/keys out of your repo: 
 `git update-index --assume-unchanged config.env`  
 Add your environment variables from the file: 
