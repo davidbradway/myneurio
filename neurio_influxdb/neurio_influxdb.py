@@ -9,20 +9,13 @@ import os
 def slow_calls():
     sample = nc.get_local_current_sample(user_info['locations'][0]['sensors'][0]['ipAddress'])
     i = sample['channels'][2]['p_W']
-    print(i, end=' ', flush=True)
-    json_body = [
-                 {
-                  "measurement": "neurioData",
+    json_body = [{"measurement": "neurioData",
                   "tags": {
                    "source": "Ch2",
-                   "type": "p_W"
-                  },
-                  "fields": {
-                   "value": i
-                  }
-                 }
-                ]
+                   "type": "p_W"},
+                  "fields": {"value": i}}]
     client.write_points(json_body)
+    print("Wrote: {0}".format(i), flush=True)
     #result = client.query('select value from sensorData;')
     #print("Result: {0}".format(result))
 
