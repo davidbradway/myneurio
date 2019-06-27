@@ -16,8 +16,7 @@ def index():
 @app.route('/r/<label>')
 def retro(label):
     datastring = read_remote.detect()
-    now = datetime.datetime.now()
-    now_str = now.replace(":", "_")
+    now_str = str(datetime.datetime.now()).replace(":", "_")
     with open('%s/%s_%s.json' % (data_dir, label, now_str), 'w') as f:
         f.write(datastring)
     return 'wrote %s \n %s' % (label, datastring)
@@ -27,8 +26,7 @@ def write_file(label):
     if 'favicon' in label:
         return 'ignore'
     datastring = read_local.detect()
-    now = datetime.datetime.now()
-    now_str = now.replace(":", "_")
+    now_str = str(datetime.datetime.now()).replace(":", "_")
     with open('%s/%s_%s.json' % (data_dir, label, now_str), 'w') as f:
         f.write(datastring)
     return 'wrote %s \n %s' % (label, datastring)
