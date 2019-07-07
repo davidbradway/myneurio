@@ -1,8 +1,23 @@
-FROM python:3.7-alpine
+FROM python:3.7-alpine as base
+
+FROM base as builder
+
 RUN pip install -U pip
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+
+RUN mkdir /install
+WORKDIR /install
+
+COPY requirements.txt /requirements.txt
+
+RUN pip install --install-option="--prefix=/install" -r /requirements.txt
+
+FROM base
+
+COPY --from=builder /install /usr/local
+COPY src/ /app
+
 EXPOSE 5000
-COPY . /app
+
 WORKDIR /app
+
 CMD ["flask", "run", "--host=0.0.0.0"]
