@@ -35,7 +35,7 @@ services:
       - '3000:3000'
     depends_on:
       - influxdb
-  py:
+  neurio_influxdb:
     build: neurio_influxdb
     restart: always
     container_name: neurio_influxdb
