@@ -1,2 +1,2 @@
-neurio
-influxdb
+neurio==0.3.1
+influxdb==5.2.1

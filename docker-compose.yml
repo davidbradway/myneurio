@@ -11,7 +11,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./collect_local_data:/app
+      - ./collect_local_data/src:/app
       - ./collect_local_data/data:/app/data
   influxdb:
     build: influxdb
@@ -46,5 +46,5 @@ services:
     depends_on:
       - influxdb
     volumes:
-      - ./neurio_influxdb:/app
+      - ./neurio_influxdb/src:/app
 
